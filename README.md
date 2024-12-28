@@ -7,14 +7,14 @@ Mod for MiSide that makes secret alternative menu available all the time.
 ### Option 1: Using provided launcher
 
 1. Download the latest version of the mod from the [releases page](https://github.com/feeeek/miside-secret-menu-unlocker/releases).
-2. Extract the contents of the mod archive into the game's root folder (where `MiSide.exe` is located).
+2. Extract the contents of the mod archive into the game's root folder (where `MiSideFull.exe` is located).
 3. Launch the game using `SecretMenuLauncher.exe`.
 
 ### Option 2: Using BepInEx
 
 1. Download the latest version of the mod from the [releases page](https://github.com/feeeek/miside-secret-menu-unlocker/releases).
 2. Download `BepInEx-Unity.IL2CPP-win-x64-6.0.0-pre.2.zip` from the [BepInEx releases page](https://github.com/BepInEx/BepInEx/releases/tag/v6.0.0-pre.2).
-3. Extract the contents of `BepInEx-Unity.IL2CPP-win-x64-6.0.0-pre.2.zip` into the game's root folder (where `MiSide.exe` is located).
+3. Extract the contents of `BepInEx-Unity.IL2CPP-win-x64-6.0.0-pre.2.zip` into the game's root folder (where `MiSideFull.exe` is located).
 4. Extract `SecretMenu` folder from the mod archive into the `BepInEx/plugins` folder.
 5. Launch the game.
 
