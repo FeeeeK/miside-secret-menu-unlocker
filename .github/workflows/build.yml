@@ -51,7 +51,7 @@ jobs:
           mkdir -p artifacts/SecretMenu
           cp target/release/secretmenu_native.dll artifacts/SecretMenu/
           cp target/release/SecretMenu.dll artifacts/SecretMenu/
-          cp target/release/SecretMenuLauncher.exe artifacts/SecretMenu/
+          cp target/release/SecretMenuLauncher.exe artifacts/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4.5.0
