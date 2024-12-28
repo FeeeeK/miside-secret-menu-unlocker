@@ -1,0 +1,25 @@
+[package]
+name = "secretmenu_native"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+pelite = "0.10.0"
+
+[dependencies.windows]
+features = [
+  "Win32_UI_WindowsAndMessaging",
+  "Win32_System_LibraryLoader",
+  "Win32_System_Memory",
+]
+version = "0.58.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "z"
+panic = "abort"
+strip = true
