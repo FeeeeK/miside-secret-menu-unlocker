@@ -4,6 +4,14 @@ Mod for MiSide that makes secret alternative menu available all the time.
 
 ## Installation
 
+### Option 1: Using provided launcher
+
+1. Download the latest version of the mod from the [releases page](https://github.com/feeeek/miside-secret-menu-unlocker/releases).
+2. Extract the contents of the mod archive into the game's root folder (where `MiSide.exe` is located).
+3. Launch the game using `SecretMenuLauncher.exe`.
+
+### Option 2: Using BepInEx
+
 1. Download the latest version of the mod from the [releases page](https://github.com/feeeek/miside-secret-menu-unlocker/releases).
 2. Download `BepInEx-Unity.IL2CPP-win-x64-6.0.0-pre.2.zip` from the [BepInEx releases page](https://github.com/BepInEx/BepInEx/releases/tag/v6.0.0-pre.2).
 3. Extract the contents of `BepInEx-Unity.IL2CPP-win-x64-6.0.0-pre.2.zip` into the game's root folder (where `MiSide.exe` is located).
@@ -19,7 +27,10 @@ Mod for MiSide that makes secret alternative menu available all the time.
 1. Install dotnet SDK 6.0 or newer
 2. Install rust and cargo
 3. Run `cargo build --release`
-4. You should get `target/release/secretmenu_native.dll` and `bin/Release/net6.0/SecretMenu.dll` files
+4. Create `SecretMenu` folder in the game's root folder
+5. Copy `secretmenu_native.dll` and `SecretMenu.dll` from `target/release` to `SecretMenu` folder
+6. Copy `SecretMenuLoader.exe` from `target/release` to the game's root folder
+7. Launch the game using `SecretMenuLoader.exe`
 
 ## Contributing
 

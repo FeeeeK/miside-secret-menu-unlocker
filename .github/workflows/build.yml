@@ -1,0 +1,52 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1.10.1
+        with:
+          toolchain: stable
+          cache: true
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4.2.0
+        with:
+          dotnet-version: 8.x
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v4.2.0
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-dotnet-${{ hashFiles('Plugin/SecretMenu.csproj') }}
+
+      - name: Build Rust project
+        run: cargo build --release
+
+      - name: Create artifact
+        shell: bash
+        run: |
+          mkdir -p artifacts
+          mkdir -p artifacts/SecretMenu
+          cp target/release/secretmenu_native.dll artifacts/SecretMenu/
+          cp target/release/SecretMenu.dll artifacts/SecretMenu/
+          cp target/release/SecretMenuLoader.exe artifacts/SecretMenu/
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4.5.0
+        with:
+          name: SecretMenu
+          path: artifacts/
