@@ -3,7 +3,7 @@
 version = 3
 
 [[package]]
-name = "SecretMenuLoader"
+name = "SecretMenuLauncher"
 version = "0.0.2"
 dependencies = [
  "dll-syringe",

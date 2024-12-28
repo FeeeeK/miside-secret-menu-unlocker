@@ -29,8 +29,8 @@ Mod for MiSide that makes secret alternative menu available all the time.
 3. Run `cargo build --release`
 4. Create `SecretMenu` folder in the game's root folder
 5. Copy `secretmenu_native.dll` and `SecretMenu.dll` from `target/release` to `SecretMenu` folder
-6. Copy `SecretMenuLoader.exe` from `target/release` to the game's root folder
-7. Launch the game using `SecretMenuLoader.exe`
+6. Copy `SecretMenuLauncher.exe` from `target/release` to the game's root folder
+7. Launch the game using `SecretMenuLauncher.exe`
 
 ## Contributing
 

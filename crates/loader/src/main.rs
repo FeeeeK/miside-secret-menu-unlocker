@@ -9,8 +9,8 @@ use windows::Win32::System::Threading::{
 };
 
 fn main() {
-    std::fs::remove_file("SecretMenuLoader.log").ok();
-    let appender = tracing_appender::rolling::never("./", "SecretMenuLoader.log");
+    std::fs::remove_file("SecretMenuLauncher.log").ok();
+    let appender = tracing_appender::rolling::never("./", "SecretMenuLauncher.log");
     tracing_subscriber::fmt().with_writer(appender).init();
     info!("Loader started");
     std::panic::set_hook(Box::new(mod_panic_hook));

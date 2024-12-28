@@ -33,6 +33,14 @@ jobs:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-dotnet-${{ hashFiles('Plugin/SecretMenu.csproj') }}
 
+      - name: Cache Rust dependencies
+        uses: actions/cache@v4.2.0
+        with:
+          path: |
+            ~/.cargo
+            target/release
+          key: ${{ runner.os }}-rust-${{ hashFiles('Cargo.lock') }}
+
       - name: Build Rust project
         run: cargo build --release
 
@@ -43,7 +51,7 @@ jobs:
           mkdir -p artifacts/SecretMenu
           cp target/release/secretmenu_native.dll artifacts/SecretMenu/
           cp target/release/SecretMenu.dll artifacts/SecretMenu/
-          cp target/release/SecretMenuLoader.exe artifacts/SecretMenu/
+          cp target/release/SecretMenuLauncher.exe artifacts/SecretMenu/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4.5.0
